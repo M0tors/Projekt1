@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,9 @@ import java.util.List;
 public class Dane extends AppCompatActivity {
 
    EditText et1;
+    TextView tek1;
     Button bt1;
+    String tekst;
 
 
 
@@ -31,6 +34,7 @@ public class Dane extends AppCompatActivity {
 
         et1 = (EditText) findViewById(R.id.editText3);
         bt1 = (Button) findViewById(R.id.button2);
+        tek1 = (TextView) findViewById(R.id.textView8);
 
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +45,20 @@ public class Dane extends AppCompatActivity {
 
             }
         });
+
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 tekst = et1.getText().toString() + "\n";
+                list.add(tekst);
+                Log.d("Tablica : ", String.valueOf(list));
+                tek1.setText(String.valueOf(list));
+            }
+        });
+
+
+
+
 
 
     }
